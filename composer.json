@@ -1,0 +1,45 @@
+{
+    "name": "yasinkuyu/omnipay-posnet",
+    "type": "library",
+    "description": "Posnet (YapıKredi Bankası) gateway for Omnipay payment processing library",
+    "keywords": [
+        "posnet",
+        "yapıkredi bankası",
+        "sanal pos",
+        "gateway",
+        "merchant",
+        "turkish pos",
+        "turkey pos",
+        "omnipay",
+        "pay",
+        "payment"
+    ],
+    "homepage": "https://github.com/yasinkuyu/omnipay-posnet",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Yasin Kuyu",
+            "email": "yasinkuyu@gmail.com"
+        },
+        {
+            "name": "Omnipay Contributors",
+            "homepage": "https://github.com/yasinkuyu/omnipay-posnet/contributors"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Omnipay\\Posnet\\": "src/"
+        }
+    },
+    "require": {
+        "omnipay/common": "~2.0"
+    },
+    "require-dev": {
+        "omnipay/tests": "~2.0"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-yasin": "2.0.x-dev"
+        }
+    }
+}
