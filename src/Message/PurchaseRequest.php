@@ -13,10 +13,13 @@ use Omnipay\Common\Message\AbstractRequest;
  * http://www.github.com/yasinkuyu/omnipay-posnet
  */
 class PurchaseRequest extends AbstractRequest {
-
-    protected $endpoint = "http://setmpos.ykb.com/PosnetWebService/XML";
-    protected $authentication = "https://www.posnet.ykb.com/PosnetWebService/XML";
-    protected $authorization = "https://www.posnet.ykb.com/3DSWebService/YKBPaymentService";
+    
+    protected $endpoint = '';
+    protected $endpoints = array(
+        'test'       => 'http://setmpos.ykb.com/PosnetWebService/XML',
+        'purchase'   => 'https://www.posnet.ykb.com/PosnetWebService/XML',
+        '3d'         => 'https://www.posnet.ykb.com/3DSWebService/YKBPaymentService'
+    );
  
     protected $currencies = [
         'TRY' => 'YT',
@@ -26,7 +29,7 @@ class PurchaseRequest extends AbstractRequest {
 
     public function getData() {
 
-        $this->validate('amount', 'card');
+        $this->validate('card');
         $this->getCard()->validate();
         $currency = $this->getCurrency();
 
@@ -37,8 +40,7 @@ class PurchaseRequest extends AbstractRequest {
         $data['extraPoint'] = $this->getExtraPoint();
         $data['multiplePoint'] = $this->getMultiplePoint();
         
-        $data['cardHolderName'] = $this->getCard()->getFistName() . " ". $this->getCard()->getLastName();
-        $data['amount'] = $this->getAmount();
+        $data['amount'] = $this->getAmountInteger();
         $data['ccno'] = $this->getCard()->getNumber();
         $data['expDate'] = $this->getCard()->getExpiryDate('my');
         $data["cvc"] = $this->getCard()->getCvv();
@@ -48,7 +50,7 @@ class PurchaseRequest extends AbstractRequest {
 
     public function sendData($data) {
 
-        $document = new DOMDocument('1.0', 'ISO-8859-9');
+        $document = new DOMDocument('1.0', 'UTF-8');
         $root = $document->createElement('posnetRequest');
 
         $root->appendChild($document->createElement('mid', $this->getMerchantId()));
@@ -60,6 +62,8 @@ class PurchaseRequest extends AbstractRequest {
             $ossRequest->appendChild($document->createElement($id, $value));
         }
 
+        $root->appendChild($ossRequest);
+        
         $document->appendChild($root);
 
         // Post to Posnet
@@ -77,11 +81,16 @@ class PurchaseRequest extends AbstractRequest {
                 'CURLOPT_POST' => 1
             )
         ));
-
-        $httpResponse = $this->httpClient->post($this->endpoint, $headers, $document->saveXML())->send();
+       
+        $xml = "xmldata=".$document->saveXML();
+        
+        $this->endpoint = $this->getTestMode() ? $this->endpoints['test'] : $this->endpoints['purchase'];
+        
+        $httpResponse = $this->httpClient->post($this->endpoint, $headers, $xml)->send();
 
         return $this->response = new Response($this, $httpResponse->getBody());
     }
+    
     public function getMerchantId() {
         return $this->getParameter('merchantId');
     }
