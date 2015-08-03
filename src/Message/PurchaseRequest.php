@@ -35,7 +35,7 @@ class PurchaseRequest extends AbstractRequest {
 
         $data['orderID'] = $this->getOrderId();
         $data['currencyCode'] = $this->currencies[$currency];
-        $data['installment'] = $this->getInstallments();
+        $data['installment'] = $this->getInstallment();
         
         $data['extraPoint'] = $this->getExtraPoint();
         $data['multiplePoint'] = $this->getMultiplePoint();
@@ -129,6 +129,14 @@ class PurchaseRequest extends AbstractRequest {
 
     public function setTransId($value) {
         return $this->setParameter('transId', $value);
+    }
+
+    public function getOrderId() {
+        return $this->getParameter('orderid');
+    }
+
+    public function setOrderId($value) {
+        return $this->setParameter('orderid', $value);
     }
 
     public function getExtraPoint() {

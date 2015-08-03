@@ -19,7 +19,7 @@ class AuthorizeRequest extends PurchaseRequest {
 
         $data['orderID'] = $this->getOrderId();
         $data['currencyCode'] = $this->currencies[$currency];
-        $data['installment'] = $this->getInstallments();
+        $data['installment'] = $this->getInstallment();
         
         $data['extraPoint'] = $this->getExtraPoint();
         $data['multiplePoint'] = $this->getMultiplePoint();

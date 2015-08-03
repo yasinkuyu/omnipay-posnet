@@ -21,7 +21,7 @@ class Gateway extends AbstractGateway {
         return array(
             'merchantId' => '',
             'terminalId' => '',
-            'installments' => '00',
+            'installment' => '00',
             'type' => 'sale',
             'currency' => 'TRY'
         );
@@ -63,12 +63,12 @@ class Gateway extends AbstractGateway {
         return $this->setParameter('terminalId', $value);
     }
 
-    public function getInstallments() {
-        return $this->getParameter('installments');
+    public function getInstallment() {
+        return $this->getParameter('installment');
     }
 
-    public function setInstallments($value) {
-        return $this->setParameter('installments', $value);
+    public function setInstallment($value) {
+        return $this->setParameter('installment', $value);
     }
 
     public function getType() {
@@ -77,6 +77,14 @@ class Gateway extends AbstractGateway {
 
     public function setType($value) {
         return $this->setParameter('type', $value);
+    }
+
+    public function getOrderId() {
+        return $this->getParameter('orderid');
+    }
+
+    public function setOrderId($value) {
+        return $this->setParameter('orderid', $value);
     }
 
     public function getTransId() {

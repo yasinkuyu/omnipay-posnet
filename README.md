@@ -68,10 +68,10 @@ PHPUnit is a programmer-oriented testing framework for PHP. It is an instance of
                 $gateway->setTestMode(TRUE);
 
                 $options = [
-                    'number'        => '4506349116608409',
+                    'number'        => '4506341010205499',
                     'expiryMonth'   => '03',
                     'expiryYear'    => '2017',
-                    'cvv'           => 'XXX'
+                    'cvv'           => '000'
                 ];
 
                 $response = $gateway->purchase(
