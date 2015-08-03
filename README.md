@@ -1,6 +1,6 @@
 # Omnipay: Posnet
 
-**Posnet (EST) (İş Bankası, Akbank, Finansbank, Denizbank, Kuveytturk, Halkbank, Anadolubank, ING Bank, Citibank, Cardplus) gateway for Omnipay payment processing library**
+**Posnet (YapıKredi Bankası) gateway for Omnipay payment processing library**
 
 [![Latest Stable Version](https://poser.pugx.org/yasinkuyu/omnipay-posnet/v/stable)](https://packagist.org/packages/yasinkuyu/omnipay-posnet) 
 [![Total Downloads](https://poser.pugx.org/yasinkuyu/omnipay-posnet/downloads)](https://packagist.org/packages/yasinkuyu/omnipay-posnet) 
@@ -11,8 +11,7 @@
 processing library for PHP 5.3+. This package implements Posnet (Turkey Payment Gateways) support for Omnipay.
 
 
-Posnet (Eski adıyla EST) altyapısını kullanan Türkiye bankaları için Omnipay kütüphanesi. Desteklenmesi hedeflenen bankalar; İş Bankası, Akbank, Finansbank, Denizbank, Kuveytturk, Halkbank, Anadolubank, ING Bank, Citibank, Cardplus.
-
+Posnet (YapıKredi Bankası) sanal pos hizmeti için omnipay kütüphanesi.
 
 ## Installation
 
@@ -37,16 +36,7 @@ And run composer to update your dependencies:
 The following gateways are provided by this package:
 
 * Posnet
-    - İş Bankası 
-    - Akbank
-    - Finansbank 
-    - Denizbank
-    - Kuveytturk 
-    - Halkbank
-    - Anadolubank 
-    - ING Bank 
-    - Citibank 
-    - Cardplus
+    - YapıKredi Bankası
 
 Gateway Methods
 
@@ -66,124 +56,7 @@ repository.
 PHPUnit is a programmer-oriented testing framework for PHP. It is an instance of the xUnit architecture for unit testing frameworks.
 
 ## Sample App
-        <?php defined('BASEPATH') OR exit('No direct script access allowed');
-
-        use Omnipay\Omnipay;
-
-        class PaymentTest extends CI_Controller {
-
-            public function index() {
-
-                $gateway = Omnipay::create('Posnet');
-
-                $gateway->setBank("denizbank");
-                $gateway->setUserName("DENIZTEST");
-                $gateway->setClientId("800100000");
-                $gateway->setPassword("DENIZTEST123");
-                $gateway->setTestMode(TRUE);
-
-                $options = [
-                    'number'        => '5406675406675403',
-                    'expiryMonth'   => '12',
-                    'expiryYear'    => '2015',
-                    'cvv'           => '000',
-                    'email'         => 'yasinkuyu@gmail.com',
-                    'firstname'     => 'Yasin',
-                    'lastname'      => 'Kuyu'
-                ];
-
-                $response = $gateway->purchase(
-                [
-                    //'installments'  => '', # Taksit
-                    //'moneypoints'   => 1.00, // Set money points (Maxi puan gir)
-                    'amount'        => 12.00,
-                    'type'          => 'Auth',
-                    'orderid'       => 'ORDER-365123',
-                    'card'          => $options
-                ]
-                )->send();
-
-                $response = $gateway->authorize(
-                [
-                    'type'          => 'PostAuth',
-                    'orderid'       => 'ORDER-365123',
-                    'card'          => $options
-                ]
-                )->send();
-
-                $response = $gateway->capture(
-                [
-                    'orderid'       => 'ORDER-365123',
-                    'amount'        => 1.00,
-                    'currency'      => 'TRY',
-                    'card'          => $options
-                ]
-                )->send();
-
-
-                $response = $gateway->refund(
-                [
-                    'orderid'       => 'ORDER-365123',
-                    'amount'        => 1.00,
-                    'currency'      => 'TRY',
-                    'card'          => $options
-                ]
-                )->send();
-
-                $response = $gateway->credit(
-                [
-                    'orderid'       => 'ORDER-365123',
-                    'amount'        => 1.00,
-                    'currency'      => 'TRY', // Optional (default parameter TRY)
-                    'card'          => $options
-                ]
-                )->send();
-
-                $response = $gateway->void(
-                [
-                    'orderid'       => 'ORDER-365123',
-                    'amount'        => 1.00,
-                    'currency'      => 'TRY',
-                    'card'          => $options
-                ]
-                )->send();
-
-                  $response = $gateway->credit(
-                [
-                    'amount'        => 1.00,
-                    'card'          => $options
-                ]
-                )->send();
-
-                $response = $gateway->settle(
-                [
-                    'settlement'   => true,
-                    'card'         => $options
-                ]
-                )->send();
-
-                $response = $gateway->money(
-                [
-                    'moneypoints'  => "1",
-                    'card'         => $options
-                ]
-                )->send();
-
-                if ($response->isSuccessful()) {
-                    //echo $response->getTransactionReference();
-                    echo $response->getMessage();
-                } else {
-                    echo $response->getError();
-                }
-
-                // Debug
-                //var_dump($response);
-
-            }
-
-        }
-
-
+    ToDo
 
 ## Support
 
