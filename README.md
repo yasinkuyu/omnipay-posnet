@@ -1,6 +1,6 @@
 # Omnipay: Posnet
 
-**Posnet (Yapı Kredi, Vakıfbank, Anadolubank sanal pos) gateway for Omnipay payment processing library**
+**Posnet (Yapı Kredi, Vakıfbank, Anadolubank) gateway for Omnipay payment processing library**
 
 [![Latest Stable Version](https://poser.pugx.org/yasinkuyu/omnipay-posnet/v/stable)](https://packagist.org/packages/yasinkuyu/omnipay-posnet) 
 [![Total Downloads](https://poser.pugx.org/yasinkuyu/omnipay-posnet/downloads)](https://packagist.org/packages/yasinkuyu/omnipay-posnet) 
@@ -36,13 +36,15 @@ And run composer to update your dependencies:
 The following gateways are provided by this package:
 
 * Posnet
-    - YapıKredi Bankası
+    - Yapı Kredi
+    - Vakıfbank
+    - Anadolubank
 
 Gateway Methods
 
-* authorize($options) - (auth) authorize an amount on the customer's card
+* authorize($options) - authorize an amount on the customer's card
 * capture($options) - capture an amount you have previously authorized
-* purchase($options) - (sale) authorize and immediately capture an amount on the customer's card
+* purchase($options) - authorize and immediately capture an amount on the customer's card
 * refund($options) - refund an already processed transaction
 * void($options) - generally can only be called up to 24 hours after submitting a transaction
 
