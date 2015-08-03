@@ -47,18 +47,6 @@ class Gateway extends AbstractGateway {
         return $this->createRequest('\Omnipay\Posnet\Message\VoidRequest', $parameters);
     }
 
-    public function credit(array $parameters = array()) {
-        return $this->createRequest('\Omnipay\Posnet\Message\CreditRequest', $parameters);
-    }
-
-    public function settle(array $parameters = array()) {
-        return $this->createRequest('\Omnipay\Posnet\Message\SettleRequest', $parameters);
-    }
-
-    public function money(array $parameters = array()) {
-        return $this->createRequest('\Omnipay\Posnet\Message\MoneyPointsRequest', $parameters);
-    }
-
     public function getMerchantId() {
         return $this->getParameter('merchantId');
     }
@@ -91,12 +79,12 @@ class Gateway extends AbstractGateway {
         return $this->setParameter('type', $value);
     }
 
-    public function getOrderId() {
-        return $this->getParameter('orderid');
+    public function getTransId() {
+        return $this->getParameter('transId');
     }
 
-    public function setOrderId($value) {
-        return $this->setParameter('orderid', $value);
+    public function setTransId($value) {
+        return $this->setParameter('transId', $value);
     }
 
     public function getExtraPoint() {

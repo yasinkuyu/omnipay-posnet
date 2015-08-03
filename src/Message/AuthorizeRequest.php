@@ -13,11 +13,22 @@ class AuthorizeRequest extends PurchaseRequest {
 
     public function getData() {
 
-        $this->validate('orderid');
+        $this->validate('card');
+        $this->getCard()->validate();
+        $currency = $this->getCurrency();
 
-        $data['Type'] = $this->getType();
-        $data['OrderId'] = $this->getOrderId();
-
+        $data['orderID'] = $this->getOrderId();
+        $data['currencyCode'] = $this->currencies[$currency];
+        $data['installment'] = $this->getInstallments();
+        
+        $data['extraPoint'] = $this->getExtraPoint();
+        $data['multiplePoint'] = $this->getMultiplePoint();
+        
+        $data['amount'] = $this->getAmountInteger();
+        $data['ccno'] = $this->getCard()->getNumber();
+        $data['expDate'] = $this->getCard()->getExpiryDate('my');
+        $data["cvc"] = $this->getCard()->getCvv();
+ 
         return $data;
     }
 

@@ -107,12 +107,12 @@ class PurchaseRequest extends AbstractRequest {
         return $this->setParameter('terminalId', $value);
     }
 
-    public function getInstallments() {
-        return $this->getParameter('installments');
+    public function getInstallment() {
+        return $this->getParameter('installment');
     }
 
-    public function setInstallments($value) {
-        return $this->setParameter('installments', $value);
+    public function setInstallment($value) {
+        return $this->setParameter('installment', $value);
     }
 
     public function getType() {
@@ -123,12 +123,12 @@ class PurchaseRequest extends AbstractRequest {
         return $this->setParameter('type', $value);
     }
 
-    public function getOrderId() {
-        return $this->getParameter('orderid');
+    public function getTransId() {
+        return $this->getParameter('transId');
     }
 
-    public function setOrderId($value) {
-        return $this->setParameter('orderid', $value);
+    public function setTransId($value) {
+        return $this->setParameter('transId', $value);
     }
 
     public function getExtraPoint() {

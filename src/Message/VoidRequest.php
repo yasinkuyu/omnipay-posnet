@@ -13,10 +13,11 @@ class VoidRequest extends PurchaseRequest {
 
     public function getData() {
 
-        $this->validate('orderid');
-
-        $data['Type'] = 'Void';
-        $data['OrderId'] = $this->getOrderId();
+        $this->validate('transid');
+        
+        $data['transaction'] = "sale";
+        $data['hostLogKey'] = $this->getTrans();
+        $data['authCode'] = $this->getAuthCode();
 
         return $data;
     }

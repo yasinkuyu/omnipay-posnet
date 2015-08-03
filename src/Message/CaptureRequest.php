@@ -13,13 +13,14 @@ class CaptureRequest extends PurchaseRequest {
 
     public function getData() {
 
-        $this->validate('orderid', 'amount');
+        $this->validate('transid', 'amount');
         $currency = $this->getCurrency();
-
-        $data['Type'] = 'PostAuth';
-        $data['OrderId'] = $this->getOrderId();
-        $data['Currency'] = $this->currencies[$currency];
-        $data['Total'] = $this->getAmount();
+ 
+        $data['hostLogKey'] = $this->getTransId();
+        $data['authCode'] = $this->getAuthCode();
+        $data['currencyCode'] = $this->currencies[$currency];
+        $data['amount'] = $this->getAmountInteger();
+        $data['installment'] = $this->getInstallment();
 
         return $data;
     }

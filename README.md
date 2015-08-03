@@ -40,11 +40,9 @@ The following gateways are provided by this package:
 
 Gateway Methods
 
-* authorize($options) - authorize an amount on the customer's card
-* completeAuthorize($options) - handle return from off-site gateways after authorization
+* authorize($options) - (auth) authorize an amount on the customer's card
 * capture($options) - capture an amount you have previously authorized
-* purchase($options) - authorize and immediately capture an amount on the customer's card
-* completePurchase($options) - handle return from off-site gateways after purchase
+* purchase($options) - (sale) authorize and immediately capture an amount on the customer's card
 * refund($options) - refund an already processed transaction
 * void($options) - generally can only be called up to 24 hours after submitting a transaction
 
