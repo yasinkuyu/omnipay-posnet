@@ -17,7 +17,6 @@ class CaptureRequest extends PurchaseRequest {
         $currency = $this->getCurrency();
  
         $data['hostLogKey'] = $this->getTransId();
-        $data['authCode'] = $this->getAuthCode();
         $data['currencyCode'] = $this->currencies[$currency];
         $data['amount'] = $this->getAmountInteger();
         $data['installment'] = $this->getInstallment();
