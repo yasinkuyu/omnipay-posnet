@@ -1,7 +1,7 @@
 {
     "name": "yasinkuyu/omnipay-posnet",
     "type": "library",
-    "description": "Posnet (YapıKredi Bankası) gateway for Omnipay payment processing library",
+    "description": "Posnet (YapıKredi Bankası sanal pos) gateway for Omnipay payment processing library",
     "keywords": [
         "posnet",
         "yapıkredi bankası",
