@@ -1,6 +1,6 @@
 # Omnipay: Posnet
 
-**Posnet (YapıKredi Bankası) gateway for Omnipay payment processing library**
+**Posnet (Yapı Kredi, Vakıfbank, Anadolubank sanal pos) gateway for Omnipay payment processing library**
 
 [![Latest Stable Version](https://poser.pugx.org/yasinkuyu/omnipay-posnet/v/stable)](https://packagist.org/packages/yasinkuyu/omnipay-posnet) 
 [![Total Downloads](https://poser.pugx.org/yasinkuyu/omnipay-posnet/downloads)](https://packagist.org/packages/yasinkuyu/omnipay-posnet) 
@@ -11,7 +11,7 @@
 processing library for PHP 5.3+. This package implements Posnet (Turkey Payment Gateways) support for Omnipay.
 
 
-Posnet (YapıKredi Bankası) sanal pos hizmeti için omnipay kütüphanesi.
+Posnet (Yapı Kredi, Vakıfbank, Anadolubank) sanal pos hizmeti için omnipay kütüphanesi.
 
 ## Installation
 
