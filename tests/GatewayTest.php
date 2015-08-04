@@ -19,21 +19,16 @@ class GatewayTest extends GatewayTestCase
         $this->gateway = new Gateway($this->getHttpClient(), $this->getHttpRequest());
 
         $this->options = array(
-            'bank' => 'denizbank',
-            'name' => 'DENIZTEST',
-            'clientId' => '800100000',
-            'password' => 'DENIZTEST123',
+            'merchantId' => '6700000067',
+            'terminalId' => '67000067',
+            'testmode' => 'true',
             'amount' => 10.00,
             'currency' => 'TRY',
-            'returnUrl' => 'http://sanalmagaza.org/return',
             'card' => new CreditCard(array(
-                'number'        => '5406675406675403',
-                'expiryMonth'   => '12',
-                'expiryYear'    => '2015',
-                'cvv'           => '000',
-                'email'         => 'yasinkuyu@gmail.com',
-                'firstname'     => 'Yasin',
-                'lastname'      => 'Kuyu'
+                'number'        => '4506341010205499',
+                'expiryMonth'   => '03',
+                'expiryYear'    => '2017',
+                'cvv'           => '000'
             )),
         );
     }
