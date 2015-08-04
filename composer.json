@@ -1,7 +1,7 @@
 {
     "name": "yasinkuyu/omnipay-posnet",
     "type": "library",
-    "description": "Posnet (Yapı Kredi, Vakıfbank, Anadolubank) gateway for Omnipay payment processing library",
+    "description": "Posnet (Yapı Kredi, Vakıfbank, Anadolubank sanal pos) gateway for Omnipay payment processing library",
     "keywords": [
         "posnet",
         "yapıkredi bankası",

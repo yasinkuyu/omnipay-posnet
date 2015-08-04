@@ -1,6 +1,6 @@
 # Omnipay: Posnet
 
-**Posnet (Yapı Kredi, Vakıfbank, Anadolubank) gateway for Omnipay payment processing library**
+**Posnet (Yapı Kredi, Vakıfbank, Anadolubank sanal pos) gateway for Omnipay payment processing library**
 
 [![Latest Stable Version](https://poser.pugx.org/yasinkuyu/omnipay-posnet/v/stable)](https://packagist.org/packages/yasinkuyu/omnipay-posnet) 
 [![Total Downloads](https://poser.pugx.org/yasinkuyu/omnipay-posnet/downloads)](https://packagist.org/packages/yasinkuyu/omnipay-posnet) 
