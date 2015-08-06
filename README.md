@@ -8,7 +8,7 @@
 [![License](https://poser.pugx.org/yasinkuyu/omnipay-posnet/license)](https://packagist.org/packages/yasinkuyu/omnipay-posnet)
 
 [Omnipay](https://github.com/thephpleague/omnipay) is a framework agnostic, multi-gateway payment
-processing library for PHP 5.3+. This package implements Posnet (Turkey Payment Gateways) support for Omnipay.
+processing library for PHP 5.3+. This package implements Posnet (Turkish Payment Gateways) support for Omnipay.
 
 
 Posnet (Yapı Kredi, Vakıfbank, Anadolubank) sanal pos hizmeti için omnipay kütüphanesi.

@@ -23,7 +23,8 @@ class Gateway extends AbstractGateway {
             'terminalId' => '',
             'installment' => '00',
             'type' => 'sale',
-            'currency' => 'TRY'
+            'currency' => 'TRY',
+            'testMode' => false
         );
     }
 
