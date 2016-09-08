@@ -13,6 +13,8 @@ processing library for PHP 5.3+. This package implements Posnet (Turkish Payment
 
 Posnet (Yapı Kredi, Vakıfbank, Anadolubank) sanal pos hizmeti için omnipay kütüphanesi.
 
+(Türkçe açıklamalar için http://yasinkuyu.net/omnipay-coklu-odeme-sistemi)
+
 ## Installation
 
 Omnipay is installed via [Composer](http://getcomposer.org/). To install, simply add it
