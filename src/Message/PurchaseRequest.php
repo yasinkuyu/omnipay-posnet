@@ -42,7 +42,7 @@ class PurchaseRequest extends AbstractRequest {
         
         $data['amount'] = $this->getAmountInteger();
         $data['ccno'] = $this->getCard()->getNumber();
-        $data['expDate'] = $this->getCard()->getExpiryDate('my');
+        $data['expDate'] = $this->getCard()->getExpiryDate('ym');
         $data["cvc"] = $this->getCard()->getCvv();
  
         return $data;
