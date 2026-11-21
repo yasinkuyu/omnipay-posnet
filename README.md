@@ -144,25 +144,17 @@ PHPUnit is a programmer-oriented testing framework for PHP. It is an instance of
         }
 
 
-## NestPay (EST)
-(İş Bankası, Akbank, Finansbank, Denizbank, Kuveytturk, Halkbank, Anadolubank, ING Bank, Citibank, Cardplus) gateway for Omnipay payment processing library
-https://github.com/yasinkuyu/omnipay-nestpay
+## Other Omnipay packages
 
-## Iyzico
-Iyzico gateway for Omnipay payment processing library
-https://github.com/yasinkuyu/omnipay-iyzico
-
-## GVP (Granti Sanal Pos)
-Gvp (Garanti, Denizbank, TEB, ING, Şekerbank, TFKB) gateway for Omnipay payment processing library
-https://github.com/yasinkuyu/omnipay-gvp
-
-## BKM Express
-BKM Express gateway for Omnipay payment processing library
-https://github.com/yasinkuyu/omnipay-bkm
-
-## Paratika
-Paratika (Asseco) (Akbank, TEB, Halkbank, Finansbank, İş Bankası, Şekerbank, Vakıfbank ) gateway for Omnipay payment processing library
-https://github.com/yasinkuyu/omnipay-paratika
+- **[Omnipay: NestPay (EST / Payten)](https://github.com/yasinkuyu/omnipay-nestpay)** — İş Bankası, Akbank, Halkbank, Ziraat, TEB, QNB, ING, Şekerbank, Anadolubank virtual POS; 3D Pay Hosting
+- **[Omnipay: GVP (Garanti BBVA)](https://github.com/yasinkuyu/omnipay-gvp)** — Garanti BBVA virtual POS; hosted payment page
+- **[Omnipay: Akbank](https://github.com/yasinkuyu/omnipay-akbank)** — Akbank virtual POS (new platform); hosted payment page
+- **[Omnipay: QNB](https://github.com/yasinkuyu/omnipay-qnb)** — QNB virtual POS (PayFor); hosted payment page
+- **[Omnipay: Paratika](https://github.com/yasinkuyu/omnipay-paratika)** — Paratika, VakıfPayS and ZiraatPay hosted payment page
+- **[Omnipay: Paycell SDK](https://github.com/yasinkuyu/omnipay-paycell-sdk)** — Turkcell Paycell payment page (Web SDK)
+- **[Omnipay: Paycell API](https://github.com/yasinkuyu/omnipay-paycell)** — Turkcell Paycell payment API
+- **[Omnipay: iyzico](https://github.com/yasinkuyu/omnipay-iyzico)** — iyzico checkout form
+- **[Omnipay: PayTR](https://github.com/yasinkuyu/omnipay-paytr)** — PayTR virtual POS
 
 ## Support
 
